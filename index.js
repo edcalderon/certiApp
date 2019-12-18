@@ -22,10 +22,11 @@ express()
 .get('/',  (req, res) => {
 
     res.render('index', {
-        list: certificates,
-        sort: req.query.sort
+
     });
 })
+
+.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 // mongoose Conection
 mongoose.connect(URLDB, { useNewUrlParser: true, useUnifiedTopology: true}, (err) => {

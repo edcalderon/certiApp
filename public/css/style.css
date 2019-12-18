@@ -261,13 +261,13 @@ h1 {
 
 
 body {
-  zoom: 110%;
+  zoom: 100%;
   font-size: 14px;
   line-height: 1.8;
   color: #fff;
   background-image: url("../images/back.jpg");
-  background-repeat: cover;
-  background-size: contain;
+  background-repeat: contain;
+  background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -494,6 +494,8 @@ button {
   border: none;
   background: transparent;
   border-radius: 10px;
+  padding: 13px 20px;
+
 }
 
 

@@ -1,4 +1,4 @@
-const hbs = require('hbs');
+/* const hbs = require('hbs');
 const index = require('./../index.js');
 
 hbs.registerHelper('listVehicles', (list, sort) => {
@@ -76,4 +76,4 @@ hbs.registerHelper('listVehicles', (list, sort) => {
     })
     return text
 
-});
+}); */
