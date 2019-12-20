@@ -98,11 +98,19 @@
         let apiUrl = 'http://localhost:5000'
         $("#message").empty()
         $("#tbody").empty()
-        $.ajax({
-          url: apiUrl+`?id=${input}`,
-          crossDomain:true,
-          dataType : 'jsonp',
-          success: function(res) {
+        var settings = {  
+          'cache': false,
+          "async": true,
+          "crossDomain": true,
+          "url": apiUrl+`?id=${input}`,
+          "method": "GET",
+          "headers": {
+              "accept": "application/json",
+              "Access-Control-Allow-Origin":"*"
+          }
+        }
+
+        $.ajax(settings).done(function (res) {
             if (res == "Identificacion no encontrada ponte en contacto"){
               $.notify( "Identificacion No encontrada, ponte en contacto con soporte.", {className:"info", position:"left top"})
             }else{
@@ -112,11 +120,7 @@
                                     <td class="cell100 column2"><a class="link" href="${res.url}" target="_blank" download>Descargar</a></td>
                                   </tr>`)
             }
-          },
-          error: function() {
-                console.log("No se ha podido obtener la información");
-          }
-        });
+        })
       })
     </script>
 
