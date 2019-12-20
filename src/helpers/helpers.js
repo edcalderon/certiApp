@@ -5,7 +5,7 @@ hbs.registerHelper('listCertificates', (list) => {
         text =  text + 
         `<tr class="row100 body">
           <td scope="row" class="cell100 column1">${list.id}</td>
-          <td class="cell100 column2"><a class="link" href="${list.url}" target="_blank" download>Descargar</a></td>
+          <td class="cell100 column2"><a class="link" href="${list.url}" target="_blank" download>DESCARGAR</a></td>
         </tr>`   
         return text   
     }else{

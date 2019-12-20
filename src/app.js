@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express();
-const hbs = require('hbs');
 const PORT = process.env.PORT || 5000
 const { URLDB } = require('./config/config.js')
 const mongoose = require('mongoose')
@@ -25,8 +24,7 @@ var allowCrossDomain = function(req, res, next) {
 };
 
 app.use(allowCrossDomain)
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, './../public')))
 app.use(require('./routes/index'));
 
