@@ -16,8 +16,13 @@ app.set('view engine', 'hbs');// Le configuramos el motor de templates o de vist
 const Certificates = require('./../models/certificate');
 
 app.get('/', cors(), (req, res) => {
-    if (req.query.id){
-        Certificates .findOne({ id: req.query.id }, (err, result) => {
+    res.render('index', {
+    });
+});
+
+app.get('/certificate/:id',  (req, res) => {
+    if (req.params.id){
+        Certificates .findOne({ id: req.params.id }, (err, result) => {
             if (err) {
                 console.log(err);
             }else if (result) {
@@ -29,10 +34,8 @@ app.get('/', cors(), (req, res) => {
             }
         })
     }else{
-        res.render('index', {
-        });
+        res.json("Ingresa un id");
     }
-});
-
+})
 
 module.exports = app;

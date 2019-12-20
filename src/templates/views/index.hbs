@@ -102,7 +102,7 @@
           'cache': false,
           "async": true,
           "crossDomain": true,
-          "url": `/?id=${input}`,
+          "url": `/certificate/${input}`,
           "method": "GET",
           "headers": {
               "accept": "application/json",
@@ -110,6 +110,7 @@
           }
         }
         $.ajax(settings).done(function (res) {
+          console.log(res)
             if (res == "Identificacion no encontrada ponte en contacto"){
               $.notify( "Identificacion No encontrada, ponte en contacto con soporte.", {className:"info", position:"left top"})
             }else{
@@ -120,14 +121,6 @@
                                   </tr>`)
             }
         })
-        axios.get(apiUrl+`?id=${input}`)
-        .then(function (response) {
-            console.log(response)
-        }).catch(function (error) {
-        console.log(error)
-        });
-
-
       })
     </script>
 

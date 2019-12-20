@@ -26,6 +26,7 @@ var allowCrossDomain = function(req, res, next) {
 
 app.use(allowCrossDomain)
 app.use(cors())
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, './../public')))
 app.all('*', function(req, res, next) {
