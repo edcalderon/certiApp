@@ -23,6 +23,14 @@ var corsMiddleware = function(req, res, next) {
 app.use(corsMiddleware);
 app.use(require('./routes/index'));
 
+app.all('*', function(req, res, next) {
+	var origin = req.get('origin'); 
+	res.header('Access-Control-Allow-Origin', origin);
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	res.header('Access-Control-Allow-Headers', 'Content-Type');
+	next();
+});
+
 server.listen(PORT, () => {
 	console.log(`Escuchando en el puerto ${PORT}`);
 });
