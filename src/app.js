@@ -13,6 +13,13 @@ const cors = require('cors')
 app.use(cors())
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, './../public')))
+app.all('*', function(req, res, next) {
+	var origin = req.get('origin'); 
+	res.header('Access-Control-Allow-Origin', origin);
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	res.header('Access-Control-Allow-Headers', 'Content-Type');
+	next();
+});
 var corsMiddleware = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', 'localhost'); 
     res.header('Access-Control-Allow-Methods', 'OPTIONS, GET, PUT, PATCH, POST, DELETE');
@@ -23,13 +30,7 @@ var corsMiddleware = function(req, res, next) {
 app.use(corsMiddleware);
 app.use(require('./routes/index'));
 
-app.all('*', function(req, res, next) {
-	var origin = req.get('origin'); 
-	res.header('Access-Control-Allow-Origin', origin);
-	res.header("Access-Control-Allow-Headers", "X-Requested-With");
-	res.header('Access-Control-Allow-Headers', 'Content-Type');
-	next();
-});
+
 
 server.listen(PORT, () => {
 	console.log(`Escuchando en el puerto ${PORT}`);
