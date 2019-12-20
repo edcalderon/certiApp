@@ -259,7 +259,9 @@ h1 {
 
 .buttonSucced {background-color: #4CAF50;} 
 
-
+.jumbotron { 
+  background: rgba(20, 26, 34, 0.5);
+}
 body {
   zoom: 80%;
   font-size: 14px;
@@ -278,13 +280,10 @@ body {
   margin: 0px;
   }
 
-.main {
-  position: relative;
-  bottom: -30px;
-  right: 0; 
-  left: 30px }
-
-.container {
+  .addMore:hover {
+    background-color: #545454; 
+ }
+/* .container {
   width: 1426px;
   position: relative;
   bottom: 260px;
@@ -296,7 +295,7 @@ body {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -o-border-radius: 10px;
-  -ms-border-radius: 10px; }
+  -ms-border-radius: 10px; } */
 
 .booking-form {
   padding: 35px 70px 51px 70px; }
