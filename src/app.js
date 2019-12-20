@@ -13,11 +13,14 @@ const cors = require('cors')
 app.use(cors())
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, './../public')))
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+var corsMiddleware = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'localhost'); 
+    res.header('Access-Control-Allow-Methods', 'OPTIONS, GET, PUT, PATCH, POST, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, X-Requested-With, Authorization');
     next();
-});
+}
+
+app.use(corsMiddleware);
 app.use(require('./routes/index'));
 
 server.listen(PORT, () => {
