@@ -15,12 +15,6 @@ app.set('view engine', 'hbs');// Le configuramos el motor de templates o de vist
 // Models mongodb
 const Certificates = require('./../models/certificate');
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
-
 app.get('/', cors(), (req, res) => {
     if (req.query.id){
         Certificates .findOne({ id: req.query.id }, (err, result) => {
