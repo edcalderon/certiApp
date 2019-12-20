@@ -13,15 +13,6 @@ const cors = require('cors')
 app.use(cors())
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, './../public')))
-app.use((req, res, next) => {
-	res.header('Access-Control-Allow-Origin', '*');
-	res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
-	res.header('Access-Control-Allow-Headers', 'Content-Type');
-    if ('OPTIONS' == req.method) {
-      res.sendStatus(200);
-    }
-	next();
-});
 app.use(require('./routes/index'));
 
 server.listen(PORT, () => {
