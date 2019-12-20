@@ -21,8 +21,10 @@ app.get('/', cors(), (req, res) => {
             if (err) {
                 console.log(err);
             }else if (result) {
+                res.header('Access-Control-Allow-Origin', 'localhost')
                 res.json(result);
             }else {
+                res.header('Access-Control-Allow-Origin', 'localhost')
                 res.json("Identificacion no encontrada ponte en contacto");
             }
         })
