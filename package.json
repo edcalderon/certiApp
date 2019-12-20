@@ -15,7 +15,8 @@
     "hbs": "^4.0.4",
     "dotenv": "^7.0.0",
     "mongodb": "^3.2.2",
-    "mongoose": "^5.5.1"
+    "mongoose": "^5.5.1",
+    "cors": "^2.8.5"
   },
   "engines": {
     "node": "^10.x"

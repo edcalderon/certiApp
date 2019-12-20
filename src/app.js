@@ -5,9 +5,13 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors')
 
 // Paths
 const directoryPublic = path.join(__dirname, '../public');
+
+//Cors
+app.use(cors())
 
 // Static
 app.use(express.static(directoryPublic));

@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const hbs = require('hbs');
-
+const cors = require('cors');
 require('./../helpers/helpers');
 
 // Directory Paths
@@ -15,7 +15,7 @@ app.set('view engine', 'hbs');// Le configuramos el motor de templates o de vist
 // Models mongodb
 const Certificates = require('./../models/certificate');
 
-app.get('/', (req, res) => {
+app.get('/', cors(), (req, res) => {
     if (req.query.id){
         Certificates .findOne({ id: req.query.id }, (err, result) => {
             if (err) {
