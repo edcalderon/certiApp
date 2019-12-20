@@ -12,6 +12,15 @@ const directoryPublic = path.join(__dirname, '../public');
 
 //Cors
 app.use(cors())
+app.use((req, res, next) => {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header('Access-Control-Allow-Methods', 'GET');
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	if ('OPTIONS' == req.method) {
+	   res.sendStatus(200);
+	 }
+	 next();
+ });
 
 // Static
 app.use(express.static(directoryPublic));
