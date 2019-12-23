@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Certificados CICTI2019</title>
+
+  <!-- Font Icon -->
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico">
+  <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="css/w3css.min.css">
+
+  <!-- Main css -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+      <img src="images/tittle-cicti-2019.png" alt="">
+    </div>
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col col-lg-2 ">
+          </div>
+          <div class="col-md-auto col-sm-12">
+            <div class="jumbotron">
+              {{#if message}}
+              <div class="alert alert-{{type}}" role="alert">
+                {{message}}
+              </div>
+              {{/if }}
+              <br></br>
+              Tu documento aquí:
+              <i class="fa fa-male" aria-hidden="true"></i>
+              <form action="/workshop" method="POST">
+                <input type="text" id="input-id" placeholder="Buscar por nombre de articulo.." name="id" title="Type in a name">
+                <br></br>
+                <button type="submit" class="w3-greenSelect btn-buscar" style="width:96.5%;">Buscar</button>
+              </form>
+              <br></br>
+              <div class="table100 ver2 m-b-110">
+                <div class="table100-head">
+                  <table class="table" id='table'>
+                    <thead>
+                      <tr class="row100 head">
+                        <th scope="col" class="cell100 column1">Documento</th>
+                        <th class="cell100 column2">Certificado</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <div class="table100-body js-pscroll">
+                  <table id="myTable">
+                    <tbody id="tbody">{{{listCertificates certificates}}}</tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-lg-2">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col col-lg-2">
+          </div>
+          <div class="col-md-auto col-sm-12 ">
+            <div class="jumbotron">
+              <form>
+                <div class="form-group">
+                  <p>Si tienes algún inconveniente durante la generación de tu certificado por favor comunicarte a:</p>
+                  <h4><a
+                      href="mailto:workshopsalud@sena.edu.co?Subject=certificados-cicti">workshopsalud@sena.edu.co</a>
+                  </h4>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col col-lg-2">
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-2">
+        </div>
+        <div class="col-md-auto">
+          <div class="jumbotron">
+            <form>
+              <div class="form-group">
+                <h4><small><a href="edcalderon.github.io">By edca.dev</a></small>
+                </h4>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col col-lg-2">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- JS -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+  <script src="js/notify.min.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

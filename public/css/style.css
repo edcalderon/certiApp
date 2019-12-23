@@ -9,7 +9,12 @@ list-type-ulli {
   list-style-type: none;
   margin: 0;
   padding: 0; }
-
+@media (min-width: 768px) {
+    body {
+      background-position: center;
+      background-attachment: fixed;
+    }
+ }
 /* poppins-300 - latin */
 @font-face {
   font-family: 'Poppins';
@@ -175,10 +180,16 @@ input[type=radio] {
    }
 
 
-
 img {
-  max-width: 120%;
-  height: auto; }
+    width: auto ;
+    max-width: 700px ;
+    height: auto ;
+} 
+.img:hover
+    {
+      opacity: 0.3;
+      filter: alpha(opacity=30);
+    }
 
 .reload{
   background-color: #f8ba0f;
@@ -207,7 +218,7 @@ img {
   right: 30px;
   transition: background-color .3s;
   z-index: 1000;
-  transition: background-color .3s, 
+  transition: background-color .3s;
   opacity: 0;
   
 }
